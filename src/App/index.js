@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react"
 
-import View from './view';
+import View from "./view"
 
-const App = () => <View counter="0" />;
+const App = () => <View counter={0} />
 
-export default App;
+export default App
