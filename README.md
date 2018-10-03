@@ -11,3 +11,5 @@ Run the following command to install all the dependencies
 To start the app, just run the command:
 
 `npm start`
+
+** app not finished yet **
