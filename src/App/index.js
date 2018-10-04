@@ -6,6 +6,9 @@ import { counterAC } from "../redux/actions"
 import { counterReset, counterAdd } from "../redux/actions/index.js"
 
 class App extends Component {
+  static propTypes = {
+    ...View.propTypes,
+  }
   handleAdd = e => {
     this.props.handleAdd(parseInt(e.target.value))
   }

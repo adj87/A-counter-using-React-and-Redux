@@ -72,6 +72,8 @@ AppView.defaultProps = {
 
 AppView.propTypes = {
   counter: PropTypes.number,
+  handleReset: PropTypes.func.isRequired,
+  handleAdd: PropTypes.func.isRequired,
 }
 
 export default AppView

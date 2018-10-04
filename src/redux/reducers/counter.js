@@ -1,4 +1,4 @@
-import { COUNTER_RESET, COUNTER_ADD, COUNTER_SUBTRACT } from "../actions"
+import { COUNTER_RESET, COUNTER_ADD } from "../actions"
 
 const initialState = {
   current: 0,
@@ -9,10 +9,9 @@ const counterReducer = (state = initialState, { type, payload }) => {
     case COUNTER_RESET:
       return initialState
     case COUNTER_ADD:
+      const nextCurrent = state.current + payload
       // return Object.assign({}, state, {current: state.current + payload})
-      return { ...state, current: state.current + payload }
-    case COUNTER_SUBTRACT:
-      return { ...state, current: state.current - payload }
+      return { ...state, current: nextCurrent > 0 ? nextCurrent : 0 }
     default:
       return state
   }
