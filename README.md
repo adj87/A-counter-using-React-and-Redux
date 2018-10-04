@@ -12,4 +12,4 @@ To start the app, just run the command:
 
 `npm start`
 
-** app not finished yet **
+Go to http://localhost:3000 and check the app
