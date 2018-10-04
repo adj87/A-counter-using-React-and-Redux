@@ -1,11 +1,36 @@
-import React from "react"
+import React, { Component } from "react"
 import { connect } from "react-redux"
-import View from "./view"
 
-const App = ({ counter }) => <View counter={counter} />
+import View from "./view"
+import { counterAC } from "../redux/actions"
+import { counterReset, counterAdd } from "../redux/actions/index.js"
+
+class App extends Component {
+  handleAdd = e => {
+    this.props.handleAdd(parseInt(e.target.value))
+  }
+  render() {
+    const { current, handleReset } = this.props
+    return (
+      <View
+        counter={current}
+        handleReset={handleReset}
+        handleAdd={this.handleAdd}
+      />
+    )
+  }
+}
 
 const mapStateToProps = state => ({
-  counter: state.counter.current,
+  current: state.counter.current,
 })
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = {
+  handleReset: counterReset,
+  handleAdd: counterAdd,
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)

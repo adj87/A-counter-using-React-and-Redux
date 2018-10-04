@@ -1,28 +1,34 @@
 /**
  * ACTION TYPES
  */
-export const COUNTER_RESET = "COUNTER/RESET";
-export const COUNTER_ADD = "COUNTER/ADD";
-export const COUNTER_SUBTRACT = "COUNTER_SUBTRACT";
+export const COUNTER_RESET = "COUNTER/RESET"
+export const COUNTER_ADD = "COUNTER/ADD"
+export const COUNTER_SUBTRACT = "COUNTER_SUBTRACT"
 
 /**
  * ACTIONS
  */
 export const counterReset = () => ({
-  type: COUNTER_RESET
-});
+  type: COUNTER_RESET,
+})
 
-export const counterAdd = payload => ({
+export const counterAdd = (payload = 1) => ({
   type: COUNTER_ADD,
-  payload
-});
+  payload,
+})
 
 export const counterSubstract = payload => ({
   type: COUNTER_SUBTRACT,
-  payload
-});
+  payload,
+})
 
 export const counterOperation = payload => ({
   type: COUNTER_SUBTRACT,
-  payload
-});
+  payload,
+})
+
+export default {
+  counterReset,
+  counterAdd,
+  counterSubstract,
+}
